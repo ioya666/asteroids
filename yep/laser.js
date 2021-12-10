@@ -1,0 +1,16 @@
+function Laser(spos, angle){
+    this.pos = createVector(spos.x,spos.y);
+    this.vel = p5.Vector.fromAngle(angle);
+    this.vel.mult(5);
+
+    this.update = function(){
+        this.pos.add(this.vel);
+    }
+    this.render = function(){
+        push()
+        stroke(255,94,19)
+        strokeWeight(5);
+        point(this.pos.x,this.pos.y)
+        pop()
+    }
+}
