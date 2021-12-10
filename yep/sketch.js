@@ -1,6 +1,10 @@
 let ship;
 let asteroids = [];
-var lasers = []
+let lasers = []
+let right = false;
+let left = false;
+let boost = false;
+let shoot = false;
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
@@ -12,6 +16,10 @@ function setup(){
 
 function draw(){
     background(0);
+    keyIsDown(68) === true?(ship.setRotation(0.05)):0;
+    keyIsDown(65) === true?(ship.setRotation(-0.05)):0;
+    keyIsDown(87) === true?(ship.boosting(true)):0;
+    //keyisDown(32) === true?(lasers.push(new Laser(ship.pos,ship.heading))):0;
     for(let i = 0; i<asteroids.length; i++){
         asteroids[i].render();
         asteroids[i].update();
@@ -45,11 +53,5 @@ function keyReleased(){
 function keyPressed(){
     if (keyIsDown(32)){
         lasers.push(new Laser(ship.pos,ship.heading));
-    }else if (keyCode == RIGHT_ARROW){
-        ship.setRotation(0.1);
-    } else if (keyCode == LEFT_ARROW){
-        ship.setRotation(-0.1);
-    } else if (keyCode == UP_ARROW){
-        ship.boosting(true);
     }
 }
