@@ -12,7 +12,6 @@ function Asteroid(pos,r){
     }
 
     this.vel = p5.Vector.random2D();
-    this.r = random(15,50);
     this.total = floor(random(5,15));
     this.offset = [];
     for (let i = 0; i<this.total;i++){
