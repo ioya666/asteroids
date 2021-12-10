@@ -1,2 +1,2 @@
 # asteroids
--[asteroids](game/)
+-[asteroids](index.html)

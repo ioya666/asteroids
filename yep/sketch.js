@@ -13,7 +13,9 @@ function setup(){
     asteroids.push(new Asteroid());
     }
 }
-
+function windowResized(){
+    resizeCanvas(windowWidth,windowHeight);
+}
 function draw(){
     background(0);
     keyIsDown(68) === true?(ship.setRotation(0.05)):0;
