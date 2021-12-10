@@ -22,9 +22,10 @@ function draw(){
         lasers[i].update();
         for (let j = asteroids.length-1; j>=0;j--)
             if (lasers[i].hits(asteroids[j])){
+                if (asteroids[j].r > 10){
                 let newAsteroids=asteroids[j].breakup();
                 asteroids=asteroids.concat(newAsteroids);
-                console.log(asteroids);
+                }
                 asteroids.splice(j,1);
                 lasers.splice(i,1);
                 break;

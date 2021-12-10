@@ -1,14 +1,14 @@
 
 function Asteroid(pos,r){
     if(pos){
-        this.pos = pos.copy()
+        this.pos = pos.copy();
     } else {
     this.pos = createVector(random(width), random(height));
     }
     if(r){
-        this.r=r*0.5
+        this.r=r*0.5;
     } else {
-        this.r=random(15,50)
+        this.r=random(15,50);
     }
 
     this.vel = p5.Vector.random2D();
@@ -25,8 +25,8 @@ function Asteroid(pos,r){
 
     this.render = function(){
         push();
-        translate(this.pos.x,this.pos.y)
-        noFill()
+        translate(this.pos.x,this.pos.y);
+        noFill();
         stroke(0,0,255)
 
         beginShape();

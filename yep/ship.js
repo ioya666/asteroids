@@ -1,6 +1,6 @@
 function Ship(){
     this.pos = createVector(width/2, height/2);
-    this.r = 40;
+    this.r = 20;
     this.heading = 0;
     this.rotation = 0;
     this.vel = createVector(1,0);
@@ -11,8 +11,8 @@ function Ship(){
     }
     this.boost = function(){
         let force = p5.Vector.fromAngle(this.heading);
-        force.mult(0.4);
-        this.vel.add(force)
+        force.mult(0.2);
+        this.vel.add(force);
     }
 
     this.update = function(){
@@ -25,13 +25,13 @@ function Ship(){
     }
 
     this.render = function(){
-        push()
+        push();
         translate(this.pos.x,this.pos.y);
-        rotate(this.heading + PI / 2)
+        rotate(this.heading + PI / 2);
         fill(0);
         stroke(255,0,0);
         triangle(-this.r,this.r,this.r,this.r,0,-this.r-20);
-        pop()
+        pop();
     }
     this.edges = function(){
         if (this.pos.x > width + this.r){
