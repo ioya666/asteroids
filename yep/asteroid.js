@@ -37,7 +37,6 @@ function Asteroid(pos,r){
             vertex(x,y);
         }
         endShape(CLOSE);
-
         pop();
     }
     this.breakup = function(){

@@ -1,21 +1,24 @@
-function Laser(spos, angle){
-    this.pos = createVector(spos.x,spos.y);
-    this.vel = p5.Vector.fromAngle(angle);
-    this.vel.mult(5);
+class Laser {
+    constructor(spos, angle) {
+        this.pos = createVector(spos.x, spos.y);
+        this.vel = p5.Vector.fromAngle(angle);
+        this.vel.mult(15);
+    }
 
-    this.update = function(){
+    update() {
         this.pos.add(this.vel);
     }
-    this.render = function(){
+
+    render() {
         push();
-        stroke(255,255,0);
+        stroke(255, 255, 0);
         strokeWeight(5);
-        point(this.pos.x,this.pos.y);
+        point(this.pos.x, this.pos.y);
         pop();
     }
-    this.hits = function(asteroid){
-        let d = dist(this.pos.x,this.pos.y,asteroid.pos.x,asteroid.pos.y)
-        if(d<asteroid.r){
+    hits(asteroid){
+        let d = dist(this.pos.x, this.pos.y, asteroid.pos.x, asteroid.pos.y)
+        if (d < asteroid.r) {
             return true;
         } else {
             return false;
