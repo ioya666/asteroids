@@ -29,5 +29,5 @@ class Laser {
         } else {
             return false;
         }
-    };
+    }
 }

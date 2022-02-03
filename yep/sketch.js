@@ -45,8 +45,6 @@ function draw(){
             }
         } 
     } 
-    
-
     ship.render();
     ship.turn();
     ship.update();
