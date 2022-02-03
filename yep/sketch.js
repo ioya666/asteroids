@@ -5,11 +5,13 @@ let right = false;
 let left = false;
 let boost = false;
 let shoot = false;
-let LaserSound 
-
+let butten 
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
+   butten = createButton("start game")
+   butten.position(100, 100);
+   butten.mousePressed(GameStart)
     ship = new Ship();
     for(let i = 0; i < 10; i++){
     asteroids.push(new Asteroid());
@@ -28,6 +30,9 @@ function draw(){
         asteroids[i].update();
         asteroids[i].edges();
     }
+
+    }
+
     for(let i = lasers.length-1; i>= 0; i--){
         lasers[i].render();
         lasers[i].update();
@@ -64,4 +69,12 @@ function keyPressed(){
         lasers.push(new Laser(ship.pos,ship.heading));
         LaserSound.play();
     }
+}
+function GameOver(){
+    console.log("game over")
+    butten.show()
+}
+
+function GameStart(){
+    butten.hide()
 }
