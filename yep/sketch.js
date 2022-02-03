@@ -9,9 +9,6 @@ let butten
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
-   butten = createButton("start game")
-   butten.position(100, 100);
-   butten.mousePressed(GameStart)
     ship = new Ship();
     for(let i = 0; i < 10; i++){
     asteroids.push(new Asteroid());
@@ -34,7 +31,7 @@ function draw(){
         asteroids[i].edges();
     }
 
-    }
+    
 
     for(let i = lasers.length-1; i>= 0; i--){
         lasers[i].render();
@@ -59,41 +56,9 @@ function draw(){
     ship.update();
     ship.edges()
 }
-function splitshot(){
-    if (keyIsDown(90)){
-        lasers.push(new Laser(ship.pos,ship.heading-15))
-        lasers.push(new Laser(ship.pos,ship.heading-10))
-        lasers.push(new Laser(ship.pos,ship.heading-5))
-        lasers.push(new Laser(ship.pos,ship.heading))
-        lasers.push(new Laser(ship.pos,ship.heading+5))
-        lasers.push(new Laser(ship.pos,ship.heading+10))
-        lasers.push(new Laser(ship.pos,ship.heading+15))
-    }
-}
+
+
 function keyReleased(){
     ship.setRotation(0);
     ship.boosting(false);
-<<<<<<< HEAD
-}
-function keyPressed(){
-    // let d = 68;
-    // let a = 65;
-    // let w = 87;
-    // keyIsDown(d) === true?(ship.setRotation(0.05)):0;
-    // keyIsDown(a) === true?(ship.setRotation(-0.05)):0;
-    // keyIsDown(w) === true?(ship.boosting(true)):0;
-    if (keyIsDown(32)){
-        lasers.push(new Laser(ship.pos,ship.heading));
-        LaserSound.play();
-    }
-}
-function GameOver(){
-    console.log("game over")
-    butten.show()
-}
-
-function GameStart(){
-    butten.hide()
-=======
->>>>>>> c4b928ea07165a0e6db4b2593adfc892cb8e4637
 }
