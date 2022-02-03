@@ -50,13 +50,9 @@ for (let i = lasers.length - 1; i >= 0; i--) {
     ship.update();
     ship.edges()
 }
-<<<<<<< HEAD
-function keyReleased() {
-=======
 
 
 function keyReleased(){
->>>>>>> b02409923dad5cbd6c2e5907a7d57b2fad108228
-    ship.setRotation(0);
+       ship.setRotation(0);
     ship.boosting(false);
 }
