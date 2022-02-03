@@ -26,6 +26,9 @@ function draw(){
     keyIsDown(87) === true?(ship.boosting(true)):0;
     keyIsDown(32) === true?(lasers.push(new Laser(ship.pos,ship.heading))):0;
     for(let i = 0; i<asteroids.length; i++){
+        if(ship.hits(asteroids[i])){
+            console.log('GAMEOVER')
+        }
         asteroids[i].render();
         asteroids[i].update();
         asteroids[i].edges();

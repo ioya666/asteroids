@@ -31,6 +31,14 @@ class Ship {
         triangle(-this.r, this.r, this.r, this.r, 0, -this.r - 20);
         pop();
     }
+    hits(asteroid) {
+        let d = dist(this.pos.x, this.pos.y, asteroid.pos.x, asteroid.pos.y)
+        if (d < this.r + asteroid.r) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     edges() {
         if (this.pos.x > width + this.r) {
             this.pos.x = -this.r;
