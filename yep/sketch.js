@@ -18,9 +18,9 @@ function windowResized(){
 }
 function draw(){
     background(0);
-    keyIsDown(68) === true?(ship.setRotation(0.05)):0;
-    keyIsDown(65) === true?(ship.setRotation(-0.05)):0;
-    keyIsDown(87) === true?(ship.boosting(true)):0;
+    // keyIsDown(68) === true?(ship.setRotation(0.05)):0;
+    // keyIsDown(65) === true?(ship.setRotation(-0.05)):0;
+    // keyIsDown(87) === true?(ship.boosting(true)):0;
     //keyisDown(32) === true?(lasers.push(new Laser(ship.pos,ship.heading))):0;
     for(let i = 0; i<asteroids.length; i++){
         asteroids[i].render();
@@ -53,12 +53,14 @@ function keyReleased(){
     ship.boosting(false);
 }
 function keyPressed(){
-    // let d = 68;
-    // let a = 65;
-    // let w = 87;
-    // keyIsDown(d) === true?(ship.setRotation(0.05)):0;
-    // keyIsDown(a) === true?(ship.setRotation(-0.05)):0;
-    // keyIsDown(w) === true?(ship.boosting(true)):0;
+    
+    
+    let d = 68;
+    let a = 65;
+    let w = 87;
+    keyIsDown(d) === true?(ship.setRotation(0.05)):0;
+    keyIsDown(a) === true?(ship.setRotation(-0.05)):0;
+    keyIsDown(w) === true?(ship.boosting(true)):0;
     if (keyIsDown(32)){
         lasers.push(new Laser(ship.pos,ship.heading));
     }
