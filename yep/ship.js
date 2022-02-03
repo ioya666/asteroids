@@ -22,14 +22,6 @@ class Ship {
         this.pos.add(this.vel);
         this.vel.mult(0.99);
     }
-    hits(asteroid) {
-        let d = dist(this.pos.x, this.pos.y, asteroid.pos.x, asteroid.pos.y);
-        if (d < this.r + asteroid.r) {
-            return true;
-        } else {
-            return false;
-        }
-    }
     render() {
         push();
         translate(this.pos.x, this.pos.y);
