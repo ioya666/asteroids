@@ -5,6 +5,8 @@ let right = false;
 let left = false;
 let boost = false;
 let shoot = false;
+let LaserSound 
+
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
@@ -13,9 +15,8 @@ function setup(){
     asteroids.push(new Asteroid());
     }
 }
-function windowResized(){
-    resizeCanvas(windowWidth,windowHeight);
-}
+
+
 function draw(){
     background(0);
     keyIsDown(68) === true?(ship.setRotation(0.05)):0;
@@ -61,5 +62,6 @@ function keyPressed(){
     // keyIsDown(w) === true?(ship.boosting(true)):0;
     if (keyIsDown(32)){
         lasers.push(new Laser(ship.pos,ship.heading));
+        LaserSound.play();
     }
 }

@@ -4,6 +4,9 @@ class Laser {
         this.vel = p5.Vector.fromAngle(angle);
         this.vel.mult(12);
     }
+
+
+
     update() {
         this.pos.add(this.vel);
     }
