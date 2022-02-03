@@ -53,6 +53,17 @@ function draw(){
     ship.update();
     ship.edges()
 }
+function splitshot(){
+    if (keyIsDown(90)){
+        lasers.push(new Laser(ship.pos,ship.heading-15))
+        lasers.push(new Laser(ship.pos,ship.heading-10))
+        lasers.push(new Laser(ship.pos,ship.heading-5))
+        lasers.push(new Laser(ship.pos,ship.heading))
+        lasers.push(new Laser(ship.pos,ship.heading+5))
+        lasers.push(new Laser(ship.pos,ship.heading+10))
+        lasers.push(new Laser(ship.pos,ship.heading+15))
+    }
+}
 function keyReleased(){
     ship.setRotation(0);
     ship.boosting(false);
