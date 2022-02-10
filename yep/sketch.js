@@ -20,13 +20,12 @@ function draw() {
     keyIsDown(65) === true ? (ship.setRotation(-0.05)) : 0;
     keyIsDown(68) === true ? (ship.setRotation(0.05)) : 0;
     keyIsDown(87) === true ? (ship.boosting(true)) : 0;
-    keyIsDown(32) === true ? (lasers.push(new Laser(ship.pos, ship.heading))) : 0;
     for (let i = 0; i < asteroids.length; i++) {
         asteroids[i].render();
         asteroids[i].update();
         asteroids[i].edges();
     }
-
+    
     for (let i = lasers.length - 1; i >= 0; i--) {
         lasers[i].render();
         lasers[i].update();
@@ -38,7 +37,7 @@ function draw() {
                     if (asteroids[j].r > 16) {
                         let newAsteroids = asteroids[j].breakup();
                         asteroids = asteroids.concat(newAsteroids);
-                        asteroids.push(new Asteroid())
+                        
                     }
                     asteroids.splice(j, 1);
                     lasers.splice(i, 1);
@@ -52,7 +51,10 @@ function draw() {
     ship.update();
     ship.edges()
 }
-
+function keyPressed(){
+    keyIsDown(32) === true ? (lasers.push(new Laser(ship.pos, ship.heading))) : 0;
+    
+}
 function keyReleased() {
     ship.setRotation(0);
     ship.boosting(false);
