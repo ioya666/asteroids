@@ -31,8 +31,6 @@ function draw(){
         asteroids[i].edges();
     }
 
-    
-
     for(let i = lasers.length-1; i>= 0; i--){
         lasers[i].render();
         lasers[i].update();
