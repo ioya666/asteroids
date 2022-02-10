@@ -38,6 +38,7 @@ for (let i = lasers.length - 1; i >= 0; i--) {
                 if (asteroids[j].r > 16) {
                     let newAsteroids = asteroids[j].breakup();
                     asteroids = asteroids.concat(newAsteroids);
+                    asteroids.push(new Asteroid())
                 }
                 asteroids.splice(j, 1);
                 lasers.splice(i, 1);
@@ -49,10 +50,10 @@ for (let i = lasers.length - 1; i >= 0; i--) {
     ship.turn();
     ship.update();
     ship.edges()
-}
+    }
 }
 
 function keyReleased(){
-       ship.setRotation(0);
+    ship.setRotation(0);
     ship.boosting(false);
 }
