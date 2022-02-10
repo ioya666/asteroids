@@ -50,5 +50,9 @@ for (let i = lasers.length - 1; i >= 0; i--) {
     ship.update();
     ship.edges()
 }
+}
 
-
+function keyReleased(){
+       ship.setRotation(0);
+    ship.boosting(false);
+}
