@@ -1,5 +1,3 @@
-
-
 class Ship {
     constructor() {
         this.pos = createVector(width / 2, height / 2);
@@ -32,22 +30,22 @@ class Ship {
         stroke(255, 0, 0);
         triangle(-this.r, this.r, this.r, this.r, 0, -this.r - 20);
         push()
-    
-        if(this.isBoosting){
-            fill(255,140,0)
-            stroke(255,140,0)
-            triangle(this.r, this.r, -this.r+20, this.r, this.r-5, this.r+40)
-            triangle(-this.r+20, this.r, -this.r, this.r, this.r-30, this.r+40)
+
+        if (this.isBoosting) {
+            fill(255, 140, 0)
+            stroke(255, 140, 0)
+            triangle(this.r, this.r, -this.r + 20, this.r, this.r - 5, this.r + 40)
+            triangle(-this.r + 20, this.r, -this.r, this.r, this.r - 30, this.r + 40)
         }
-        if(keyIsDown(65)){
-            fill(255,140,0)
-            stroke(255,140,0)
-            triangle(this.r, this.r, -this.r+20, this.r, this.r-5, this.r+40)
+        if (keyIsDown(65)) {
+            fill(255, 140, 0)
+            stroke(255, 140, 0)
+            triangle(this.r, this.r, -this.r + 20, this.r, this.r - 5, this.r + 40)
         }
-        if(keyIsDown(68)){
-            fill(255,140,0)
-            stroke(255,140,0)
-            triangle(-this.r+20, this.r, -this.r, this.r, this.r-30, this.r+40)
+        if (keyIsDown(68)) {
+            fill(255, 140, 0)
+            stroke(255, 140, 0)
+            triangle(-this.r + 20, this.r, -this.r, this.r, this.r - 30, this.r + 40)
         }
         pop()
         pop();

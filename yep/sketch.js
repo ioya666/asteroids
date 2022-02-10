@@ -26,23 +26,24 @@ function draw() {
         asteroids[i].update();
         asteroids[i].edges();
     }
-    
-for (let i = lasers.length - 1; i >= 0; i--) {
-    lasers[i].render();
-    lasers[i].update();
-    if (lasers[i].offscreen()) {
-        lasers.splice(i, 1);
-    } else {
-        for (let j = asteroids.length - 1; j >= 0; j--) {
-            if (lasers[i].hits(asteroids[j])) {
-                if (asteroids[j].r > 16) {
-                    let newAsteroids = asteroids[j].breakup();
-                    asteroids = asteroids.concat(newAsteroids);
-                    asteroids.push(new Asteroid())
+
+    for (let i = lasers.length - 1; i >= 0; i--) {
+        lasers[i].render();
+        lasers[i].update();
+        if (lasers[i].offscreen()) {
+            lasers.splice(i, 1);
+        } else {
+            for (let j = asteroids.length - 1; j >= 0; j--) {
+                if (lasers[i].hits(asteroids[j])) {
+                    if (asteroids[j].r > 16) {
+                        let newAsteroids = asteroids[j].breakup();
+                        asteroids = asteroids.concat(newAsteroids);
+                        asteroids.push(new Asteroid())
+                    }
+                    asteroids.splice(j, 1);
+                    lasers.splice(i, 1);
+                    break;
                 }
-                asteroids.splice(j, 1);
-                lasers.splice(i, 1);
-                break;
             }
         }
     }
@@ -50,10 +51,9 @@ for (let i = lasers.length - 1; i >= 0; i--) {
     ship.turn();
     ship.update();
     ship.edges()
-    }
 }
 
-function keyReleased(){
+function keyReleased() {
     ship.setRotation(0);
     ship.boosting(false);
 }
