@@ -12,15 +12,16 @@ function setup() {
 
 function draw() {
     background(0);
-    if(inputState.fire){
-        lasers.push(new Laser(ship.pos, ship.heading));
+    if(inputState.fire && !firerate){
+        lasers.push(new Laser(ship.pos,ship.heading));
+        firerate=true;
     }
     if(inputState.boost){
         ship.boosting(true)
     } else{
         ship.boosting(false)
     }
-    if(inputState.turn){
+    if(inputState.turnL){
         ship.setRotation(-0.05)
     }
     if(inputState.turnR){
