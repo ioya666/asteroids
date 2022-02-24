@@ -78,6 +78,7 @@ class Ship {
         this.heading += this.rotation;
     }
     death(){
+        textAlign(CENTER)
         textSize(80);
         fill('WHITE')
         text('you died',width/2,height/2)

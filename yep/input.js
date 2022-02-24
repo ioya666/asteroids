@@ -5,7 +5,6 @@ let inputState = {
     turnR: false
 };
 function keyPressed(){
-    console.log(key,keyCode)
     if(keyCode === 32){
         inputState.fire = true;
     }
