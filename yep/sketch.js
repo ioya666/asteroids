@@ -23,9 +23,11 @@ function draw() {
     }
     if(inputState.turnL){
         ship.setRotation(-0.05)
+        
     }
     if(inputState.turnR){
         ship.setRotation(0.05)
+        
     }
     
     for (let i = 0; i < asteroids.length; i++) {
