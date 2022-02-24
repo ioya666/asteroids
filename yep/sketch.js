@@ -12,9 +12,9 @@ function setup() {
 
 function draw() {
     background(0);
-    if(inputState.fire && !firerate){
+    if(inputState.fire){
         lasers.push(new Laser(ship.pos,ship.heading));
-        firerate=true;
+        inputState.fire=false;
     }
     if(inputState.boost){
         ship.boosting(true)
@@ -31,6 +31,7 @@ function draw() {
     for (let i = 0; i < asteroids.length; i++) {
         if(ship.hits(asteroids[i])){
             console.log('GAMEOVER')
+            ship.death()
         }
         asteroids[i].render();
         asteroids[i].update();
@@ -60,5 +61,5 @@ function draw() {
     ship.render();
     ship.turn();
     ship.update();
-    ship.edges()
+    ship.edges();
 }

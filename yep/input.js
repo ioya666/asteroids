@@ -4,7 +4,6 @@ let inputState = {
     turnL: false,
     turnR: false
 };
-let firerate=false;
 function keyPressed(){
     console.log(key,keyCode)
     if(keyCode === 32){
@@ -23,10 +22,6 @@ function keyPressed(){
 };
 function keyReleased() {
     ship.setRotation(0)
-    if(keyCode === 32){
-        inputState.fire = false;
-        firerate=false;
-    }
     if(keyCode === 87){
         inputState.boost = false;
     }

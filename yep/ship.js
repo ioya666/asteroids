@@ -77,4 +77,10 @@ class Ship {
     turn() {
         this.heading += this.rotation;
     }
+    death(){
+        textSize(80);
+        fill('WHITE')
+        text('you died',width/2,height/2)
+        noLoop()
+    }
 }
